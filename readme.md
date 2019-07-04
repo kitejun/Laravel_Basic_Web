@@ -20,8 +20,10 @@ __김연준(단독)__
 
 ### 3. 참고
 ------------------------------
- * https://laravel.kr/
+ * https://laravel.kr/                                -> 공식 한국 페이지
+ * https://laravel.co.kr/
  * https://www.youtube.com/playlist?list=PL_1fv4_9uPOOFzzvhfnXEa0toN_JzAqnz
+ * http://ezphp.net/lecture/
  
 ### 4. Detail
 ------------------------------
