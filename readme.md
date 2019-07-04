@@ -1,3 +1,39 @@
+# Laravel 학습 프로젝트
+##  Laravel의 기본 기능들이 모두 들어간 Web구현
+
+__김연준(단독)__
+
+### 0. 개요
+------------------------------
+1. Web framework인 Laravel을 학습하여 WEB마스터가 되고자 한다.
+
+<img src="/images/Zeroth.png" width="50%"><img src="/images/AppDesign.png" width="50%">
+
+
+### 1. 제작 목적
+------------------------------
+기본기능을 통한 실력 향상
+
+### 2. 역할 분담
+------------------------------
+ * 김연준: 백엔드, 프론트엔드, DB
+
+### 3. 참고
+------------------------------
+ * https://laravel.kr/                                -> 공식 한국 페이지
+ * https://laravel.co.kr/
+ * https://www.youtube.com/playlist?list=PL_1fv4_9uPOOFzzvhfnXEa0toN_JzAqnz
+ * http://ezphp.net/lecture/
+ 
+### 4. Detail
+------------------------------
+* Framework: Laravel
+ * Tool: Visual Code
+ * 언어: php
+ * 서버/DB: XAMPP(Apache, MySQL) 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -70,3 +106,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
