@@ -21,6 +21,7 @@ __김연준(단독)__
 ### 3. 참고
 ------------------------------
  * https://laravel.kr/
+ * https://www.youtube.com/playlist?list=PL_1fv4_9uPOOFzzvhfnXEa0toN_JzAqnz
  
 ### 4. Detail
 ------------------------------
@@ -29,8 +30,8 @@ __김연준(단독)__
  * 언어: php
  * 서버/DB: XAMPP(Apache, MySQL) 
 
-
 --------------------------------------------------------------------------------------------------------------------------------------
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
