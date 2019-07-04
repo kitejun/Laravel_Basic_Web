@@ -29,7 +29,7 @@
     Board.php 참고
 -->
 @if($errors->any())     <!-- error가 1개 라도 있다면~ -->
-    <div>
+    <div role="alert">
         <span class='glyphicon glyphicon-exclamation-sign' aria-hidden="true"></span>
         <span class="sr-only">Error:</span>
         @foreach ($errors->all() as $message)
