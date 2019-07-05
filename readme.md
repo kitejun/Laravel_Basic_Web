@@ -5,10 +5,7 @@ __김연준(단독)__
 
 ### 0. 개요
 ------------------------------
-1. Web framework인 Laravel을 학습하여 WEB마스터가 되고자 한다.
-
-<img src="/images/Zeroth.png" width="50%"><img src="/images/AppDesign.png" width="50%">
-
+1. Web framework 중 하나인 Laravel을 학습하여 Laravel마스터가 되고자 한다.
 
 ### 1. 제작 목적
 ------------------------------
