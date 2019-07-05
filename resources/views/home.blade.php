@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Main 페이지</h1>
-    <ul>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                    <br><br>
+                    <ul>
     
     <li>
         <a href="http://127.0.0.1:8000/slave" target="_self">
@@ -47,5 +55,9 @@
     </li>
 
     </ul>
-</body>
-</html>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

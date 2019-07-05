@@ -48,10 +48,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // 글자수 제한 수정 부분
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
 

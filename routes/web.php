@@ -1,4 +1,13 @@
 <?php
+// <<1강>> - View//
+//
+// 사용자 '/' URL로 접급
+/*
+Route::get('/', function () {
+    //return '안녕하세요~';
+    return view('welcome');
+});
+*/
 Route::get('/','MainController@index');
 //====================================================
 Route::get('/slave', function () {
@@ -31,6 +40,7 @@ Route::get('profileTwo', function () {
 });
 
 //====================================================
+// <<2강>> - Model, Controller
 /*
 Route::get('pages/aboutus', 'PageController@aboutus');
 Route::get('pages/location', 'PageController@location');
@@ -47,4 +57,9 @@ Route::post('/todo/done/{id}', 'TodoController@done');
 Route::resource('todo','TodoController');
 
 //====================================================
+// <<3강>> - 게시판
 Route::resource('/board','BoardController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
