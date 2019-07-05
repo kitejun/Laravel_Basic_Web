@@ -6,6 +6,7 @@ __김연준(단독)__
 ### 0. 개요
 ------------------------------
 1. Web framework 중 하나인 Laravel을 학습하여 Laravel마스터가 되고자 한다.
+<p align="center"><img src="http://taking.kr/blog/wp-content/uploads/2014/08/laravel.png"></p>
 
 ### 1. 제작 목적
 ------------------------------
@@ -31,7 +32,6 @@ __김연준(단독)__
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
