@@ -4,6 +4,12 @@
     <br>
     <h3>제목: {{ $board->title }}</h3>
     <p>
+        <strong>작성자: {{ $board->email }}</strong>
+    </p>
+    <p>
+        <strong>작성시기: {{ $board->created_at }}</strong>
+    </p>
+    <p>
         <strong>내용:</strong><br>
         {{ $board->body }}
     </p>
@@ -15,18 +21,26 @@
     
         <h3>
        
-        <button>
-            <a href="{{ route('board.edit', $board->id) }}">글 수정하기</a>
-        </button>
 
-        <form method="board" action="{{ route('board.destroy', $board->id) }}">
-            <input type="hidden" name='_token' value='{{ csrf_token() }}'>
-            <input type="hidden" name="_method" value='delete'>
-            <button>글 삭제하기</button>
-        </form>
 
+        @guest  
+        @endguest
+        @if($board->email==$user->email)
+            <button>
+                <a href="{{ route('board.edit', $board->id) }}">글 수정하기</a>
+            </button>
+
+            <form method="post" action="{{ route('board.destroy', $board->id) }}">
+                <input type="hidden" name='_token' value='{{ csrf_token() }}'>
+                <input type="hidden" name="_method" value='delete'>
+                <button>글 삭제하기</button>
+            </form>
+            <button>
+                <a href="{{ route('board.index') }}"> 목록으로 </a>
+            </button> 
+        @endif 
         <button>
-            <a href="{{ route('board.index') }}"> 목록으로 </a>
+                <a href="{{ route('board.index') }}"> 목록으로 </a>
         </button>
     </h3> 
 

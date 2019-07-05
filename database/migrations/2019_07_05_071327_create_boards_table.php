@@ -15,11 +15,14 @@ class CreateBoardsTable extends Migration
     {
         Schema::create('boards', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('email');
             $table->string('title');
             $table->text('body');
-            $table->data('thumbnail'); // thumbnail: 미리보기 이미지
-            $table->timestamps();
+            $table->string('thumbnail'); // thumbnail: 미리보기 이미지
+           $table->timestamps();
+
         });
+        
     }
 
     /**

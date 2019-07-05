@@ -2,6 +2,11 @@
 @section('content')
 
 <h2>*게시판 예제*</h2>
+@if($user->email==$boards->email)
+    ★ 현재 접속 ID: {{ $user->email }} ★
+else
+@endif 
+
 <ul>
     @foreach($boards as $board)
         <li>

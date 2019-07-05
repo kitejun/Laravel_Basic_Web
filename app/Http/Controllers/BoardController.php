@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\input;
 use Validator;
 use App\Board;
+use Illuminate\Support\Facades\Auth;
 //
 
 class BoardController extends Controller
@@ -16,16 +17,21 @@ class BoardController extends Controller
     {
         // Paginator로 가져오는 것
         $boards = board::orderBy('created_at', 'desc')->paginate(5); // desc: 최근 순, 5개씩
+        
+        $user=Auth::user();
+        return view('board.index', compact('boards','user'));
 
-        // 그냥 전체 가져오는 것
-        // $boards = Board::all();
-        return view('board.index', compact('boards'));
     }
 
     // board의 작성하는 화면을 보여주는 역할을 수행
     public function create()
     {
-        return view('board.create');
+        if (Auth::check()) {
+            return view('board.create');
+        }
+        else{
+            return redirect()->route('login');
+        }
     }
 
     // create()에서 작성한 내용을 실제 DB에 넣는 역할을 수행
@@ -53,6 +59,7 @@ class BoardController extends Controller
         // 저장 부분
         $board->title = Input::get('title');
         $board->body = Input::get('body');
+        $board->email = Auth::user()->email;
 
         $board->save(); // save method 실행
 
@@ -62,16 +69,29 @@ class BoardController extends Controller
     // 목록에서 선택된 post를 출력하는 역할을 수행
     public function show($id)
     {
+        $user=Auth::user();
+
         // id를 찾아 받아서 post에 넣어라 
         $board = Board::findOrFail($id);
-        return view('board.show', compact('board'));
+        return view('board.show', compact('board','user'));
     }
 
     // 목록에서 수정하기를 눌러 post를 수정하는 화면을 보여주는 역할을 수행
     public function edit($id)
     {
         $board = Board::find($id);
-        return view('board.edit', compact('board'));
+        
+        if (Auth::check()) {
+            if($board->email == Auth::user()->email) {
+                return view('board.edit', compact('board'));
+            }
+            else{
+                return redirect()->route('board.index');
+            }
+        }
+        else{
+            return redirect()->route('board.index');
+        }
     }
 
     // edit()에서 변경한 내용을 실제 DB에 update하는 역할 수행
@@ -93,7 +113,19 @@ class BoardController extends Controller
     // board를 삭제하는 역할 수행
     public function destroy($id)
     {
-        Board::destroy($id);
-        return redirect()->route('board.index');
+        $board = Board::find($id);
+        if (Auth::check()) {
+            if($board->email == Auth::user()->email) {
+                Board::destroy($id);
+                return redirect()->route('board.index');
+                
+            }
+            else{
+                return redirect()->route('board.index');
+            }
+        }
+        else{
+            return redirect()->route('board.index');
+        }    
     }
 }
