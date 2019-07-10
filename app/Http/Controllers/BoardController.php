@@ -16,7 +16,7 @@ class BoardController extends Controller
     public function index()
     {
         // Paginator로 가져오는 것
-        $boards = board::orderBy('created_at', 'desc')->paginate(5); // desc: 최근 순, 5개씩
+        $boards = Board::orderBy('created_at', 'desc')->paginate(5); // desc: 최근 순, 5개씩
         
         $user=Auth::user();
         return view('board.index', compact('boards','user'));
